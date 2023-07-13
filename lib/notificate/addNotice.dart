@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:task1/notificate/Calender/page_calander.dart';
 
 
 import '../component.dart';
-import 'Calender/multi.dart';
 import 'cubit_addNotice/cubit.dart';
 import 'cubit_addNotice/state.dart';
 
@@ -49,7 +49,7 @@ class AddNotice extends StatelessWidget {
                 onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => TableMultiExample()),
+                            MaterialPageRoute(builder: (context) => TableBasicsExample()),
                           );
                 },
               ),

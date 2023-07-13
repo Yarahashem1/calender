@@ -43,6 +43,7 @@ void Add({
       obj: obj,
       description: description,
       date: date,
+      time:time
     );
     FirebaseFirestore.instance
         .collection('notific')
