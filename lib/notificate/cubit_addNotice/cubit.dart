@@ -1,6 +1,7 @@
 
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task1/notificate/cubit_addNotice/state.dart';
 
@@ -12,7 +13,7 @@ class AddNoticeCubit extends Cubit<AddNoticetates> {
   
   static AddNoticeCubit get(context) => BlocProvider.of(context);
 
-
+ TimeOfDay selectedtime=TimeOfDay.now();
 
 void Add({
     required String obj,
@@ -62,7 +63,10 @@ void Add({
       return newValue!;
   }
 
-
+changeday(TimeOfDay timeOfDay){
+selectedtime=timeOfDay;
+emit(changetime());
+}
 
   String generateRandomString() {
   final random = Random();

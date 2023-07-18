@@ -17,3 +17,4 @@ class categorySuccessState extends AddNoticetates{}
 
 class AddFoodUserUpdateLoadingState extends AddNoticetates {}
 class updateFood extends AddNoticetates {}
+class changetime extends AddNoticetates {}

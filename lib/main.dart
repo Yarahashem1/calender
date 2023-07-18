@@ -8,7 +8,8 @@ import 'notificate/Calender/page_calander.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-await firebaseApi().initnotific();
+   // NotificationService().initNotification();
+   await firebaseApi().initnotific();
     runApp(MyApp()); 
  
 }
@@ -38,6 +39,7 @@ supportedLocales: [
         textDirection: TextDirection.rtl, // add this  textDirection: TextDirection.rtl, // set this property
   child:
    //AddNotice(),
+ //MyHomePage(title: 'Flutter Local Notifications'),
   TableBasicsExample(),
  // TableMultiExample()
   ),

@@ -8,6 +8,8 @@ import '../component.dart';
 import 'cubit_addNotice/cubit.dart';
 import 'cubit_addNotice/state.dart';
 
+
+
 // ignore: must_be_immutable
 class AddNotice extends StatelessWidget {
   var formKey = GlobalKey<FormState>();
@@ -15,6 +17,8 @@ class AddNotice extends StatelessWidget {
   var descriptionController = TextEditingController();
    var timeController = TextEditingController();
    var dateController = TextEditingController();
+  
+  TimeOfDay selectedtime=TimeOfDay.now();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -102,15 +106,23 @@ class AddNotice extends StatelessWidget {
                       
                          TextFormField( 
                                    onTap: () {
-                                    showTimePicker( context: context,
-                                    initialTime: TimeOfDay.now()).then((value) {   
-                                         timeController.text =value!.format(context).toString(); 
-                                            });
+                                    showTimePicker( 
+                                      context: context,
+                                    initialTime: selectedtime)
+                                    .then((value) {   
+                                         //timeController.text = value!.format(context).toString().replaceAll(' ', '');
+                                      //  timeController.text ="${TimeOfDay.now().hour}:${TimeOfDay.now().minute}";
+                                       if (value != null) {
+      final formattedTime = '${value.hour}:${value.minute.toString().padLeft(2, '0')}';
+      timeController.text = formattedTime;
+                                            }}
+                                            );
                               }, 
                                controller: timeController,
                               keyboardType: TextInputType.datetime, 
                                decoration: InputDecoration(
-                                border: OutlineInputBorder(      borderRadius: BorderRadius.circular(10),
+                                border: OutlineInputBorder(     
+                                   borderRadius: BorderRadius.circular(10),
                                 ),  
                                   labelText: "الوقت",
                                 prefixIcon: Icon(Icons.access_time_outlined),  ),
@@ -161,6 +173,7 @@ class AddNotice extends StatelessWidget {
                                     date: dateController.text,
                                     time: timeController.text,
                                     uid: uid,
+                                 //  token:''
                                     );
                               
                             }

@@ -41,7 +41,9 @@ dependencies:
   table_calendar:
   syncfusion_flutter_datepicker:
   intl:
-  
+  flutter_local_notifications:
+    #   implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    # implementation 'com.google.firebase:firebase-messaging:20.1.1'
 
   cloud_firestore: 
   firebase_storage:

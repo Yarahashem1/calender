@@ -7,7 +7,6 @@ class firebaseApi{
   Future<void> initnotific() async{
         await _firebaseMessaging.requestPermission();
         final fcmnotific=await _firebaseMessaging.getToken();
-        print('tokkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk:$fcmnotific');
 
   }
 }
